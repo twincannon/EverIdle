@@ -6,6 +6,10 @@ var classes = [
 	preload("res://res/class_deacon.tres")
 ]
 
+enum Skills {
+	Lumbering
+}
+
 var message_log:Log = null
 
 var current_enemy:Enemy = null
