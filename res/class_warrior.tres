@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClassResource" load_steps=2 format=3 uid="uid://b36c6sm8hq4ap"]
+
+[ext_resource type="Script" uid="uid://b0las03osn1w4" path="res://scripts/class_resource.gd" id="1_16c78"]
+
+[resource]
+script = ExtResource("1_16c78")
+classname = "Warrior"
+stat_str = 16
+stat_sta = 15
+stat_dex = 10
+stat_agi = 10
+stat_wis = 8
+stat_int = 8
+metadata/_custom_type_script = "uid://b0las03osn1w4"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClassResource" load_steps=2 format=3 uid="uid://g8m3a7lbcu6u"]
+
+[ext_resource type="Script" uid="uid://b0las03osn1w4" path="res://scripts/class_resource.gd" id="1_8gjwm"]
+
+[resource]
+script = ExtResource("1_8gjwm")
+classname = "Deacon"
+stat_str = 13
+stat_sta = 11
+stat_dex = 8
+stat_agi = 9
+stat_wis = 14
+stat_int = 10
+metadata/_custom_type_script = "uid://b0las03osn1w4"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqwqtw6j6nbp"]
+
+[ext_resource type="Script" uid="uid://y21xc3226eaf" path="res://scripts/class_button.gd" id="1_08ng7"]
+
+[node name="ClassButton" type="Button"]
+text = "Class"
+script = ExtResource("1_08ng7")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

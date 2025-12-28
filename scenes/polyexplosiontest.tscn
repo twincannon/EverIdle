@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://kcp1le6h848v"]
+
+[ext_resource type="Shader" uid="uid://bcc2q3aoha8yt" path="res://polyexplosiontest.gdshader" id="1_juxwe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5682i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrvp3"]
+render_priority = 0
+shader = ExtResource("1_juxwe")
+shader_parameter/u_cameraPos = null
+shader_parameter/u_farColor = Vector4(0, 500, 0, 0)
+shader_parameter/u_nearColor = Vector4(0.635, 500, 0, 0)
+shader_parameter/u_scaleFactor = 3.02
+shader_parameter/u_startDistance = 1.255
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_5682i")
+surface_material_override/0 = SubResource("ShaderMaterial_mrvp3")

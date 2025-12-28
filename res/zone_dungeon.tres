@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Zone" load_steps=4 format=3 uid="uid://cy53chc8086x4"]
+
+[ext_resource type="Script" uid="uid://cm2yaxs6742i2" path="res://scripts/enemy_resource.gd" id="1_4d5fc"]
+[ext_resource type="Script" uid="uid://pramw3lyhfxk" path="res://scripts/zone.gd" id="1_4n2cr"]
+[ext_resource type="Resource" uid="uid://cey8ucbn7hon6" path="res://res/enemy_rat.tres" id="1_iacse"]
+
+[resource]
+script = ExtResource("1_4n2cr")
+zone_name = "Dungeon1"
+enemy_list = Array[ExtResource("1_4d5fc")]([ExtResource("1_iacse")])
