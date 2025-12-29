@@ -35,6 +35,10 @@ func _on_enemy_died():
 func _process(delta: float) -> void:
 	pass
 
+func can_interact() -> bool:
+	var enemy = get_enemy()
+	return enemy != null
+
 func interact(instigator:Entity):
 	var enemy = get_enemy()
 	if enemy:
@@ -43,14 +47,16 @@ func interact(instigator:Entity):
 	pass
 
 func _on_respawn_timer_timeout() -> void:
-	# get enemy scene and instantiate it, then populate it's data with a resource from current zone
-	if Global.current_zone and Global.current_zone.enemy_list.size() > 0:
-		var enemy_res = Global.current_zone.enemy_list.pick_random()
-		var new_enemy = enemy_scene.instantiate()
-		new_enemy.init_enemy(enemy_res)
-		add_child(new_enemy)
-		Global.log(str("An enemy appears! health: ", new_enemy.health))
-	pass # Replace with function body.
+	var enemy = get_enemy()
+	if !enemy:
+		# get enemy scene and instantiate it, then populate it's data with a resource from current zone
+		if Global.current_zone and Global.current_zone.enemy_list.size() > 0:
+			var enemy_res = Global.current_zone.enemy_list.pick_random()
+			var new_enemy = enemy_scene.instantiate()
+			new_enemy.init_enemy(enemy_res)
+			add_child(new_enemy)
+			Global.log(str("An enemy appears! health: ", new_enemy.health))
+		pass # Replace with function body.
 
 
 func _on_child_entered_tree(node: Node) -> void:

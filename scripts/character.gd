@@ -9,12 +9,16 @@ var xp = 0
 var res:ClassResource
 var character_name:String
 
+var skills:Dictionary
+
 func _init(in_res:ClassResource = null):
 	res = in_res
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Initialize skills dict
+	for skill in Global.Skills:
+		skills[Global.Skills[skill]] = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,13 +42,14 @@ func on_added_to_slot():
 		start_interact_timer()
 
 func start_interact_timer():
-	if target_slot and target_slot is EnemySlot:
-		if target_slot.get_enemy():
-			interact_timer.wait_time = get_attack_time()
+	if target_slot:
+		if target_slot is EnemySlot:
+			if target_slot.get_enemy():
+				interact_timer.wait_time = get_attack_time()
+				interact_timer.start()
+		else:
+			interact_timer.wait_time = target_slot.interact_time
 			interact_timer.start()
-	else:
-		interact_timer.wait_time = target_slot.interact_time
-		interact_timer.start()
 
 func on_removed_from_slot():
 	if target_slot:
@@ -74,14 +79,10 @@ func get_character_texture():
 
 
 func _on_interact_timer_timeout() -> void:
-	#get enemy, attack it for our damage
-	#play attack animation
-	$AnimationPlayer.stop()
-	$AnimationPlayer.play("attack")
-	
-	if target_slot:
+	if target_slot and target_slot.can_interact():
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("attack")
 		target_slot.interact(self)
-	pass # Replace with function body.
 
 func get_damage():
 	return 1.0

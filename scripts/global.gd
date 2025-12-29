@@ -7,7 +7,25 @@ var classes = [
 ]
 
 enum Skills {
-	Lumbering
+	Offense,
+	Defense,
+	Unarmed,
+	Swordsmanship,
+	Piercing,
+	Bludgeoning,
+	DualWield,
+	DoubleAttack,
+	Lumbering,
+	Mining
+}
+
+enum Stats {
+	Str,
+	Sta,
+	Dex,
+	Agi,
+	Wis,
+	Int
 }
 
 var message_log:Log = null

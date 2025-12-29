@@ -164,6 +164,7 @@ offset_right = 167.0
 offset_bottom = 329.0
 script = ExtResource("6_tipki")
 item_resource = ExtResource("7_85g3d")
+skill_type = 8
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/FarmSlot"]
 modulate = Color(0, 1, 0, 1)

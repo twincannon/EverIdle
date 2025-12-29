@@ -17,6 +17,7 @@ signal on_zone_entered
 
 func _init() -> void:
 	Global.game = self
+	randomize()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,8 +47,8 @@ func _on_button_pressed() -> void:
 	on_zone_entered.emit()
 	pass # Replace with function body.
 	
-func show_info_panel(char:Character):
-	%InfoPanel.init_panel(char)
+func show_info_panel(character:Character):
+	%InfoPanel.init_panel(character)
 
 func get_battle_party() -> Array[Character]:
 	var members:Array[Character] = []
